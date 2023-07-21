@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+
+
 require_relative './classes/simple_csv2_wav'
 
 infile, col_nr, outfile, samples_per_sec = *ARGV
