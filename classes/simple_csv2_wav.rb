@@ -6,7 +6,7 @@ class SimpleCsv2Wav
   end
 
   def convert io_in, col_nr, outfile, samples_per_sec
-    WaveFile::Writer.new(outfile, WaveFile::Format.new(:mono, :pcm_16, 44100)) do |writer|
+    WaveFile::Writer.new(outfile, WaveFile::Format.new(:mono, :pcm_16, samples_per_sec)) do |writer|
       read_format = WaveFile::Format.new(1, :float, samples_per_sec)
       io_in.each_line do |row|
         col = row.split(',')[col_nr].chomp
